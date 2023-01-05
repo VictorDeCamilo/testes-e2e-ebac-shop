@@ -13,12 +13,12 @@ pipeline{
     }
     stage('Instalar dependências'){
       steps{
-            bat 'npm install'
+            powershell 'npm install'
       }
     }
     stage('Executar os testes'){
       steps{
-            bat 'npx cypress run'
+            powershell 'npx cypress run'
       }  
     }
   }
