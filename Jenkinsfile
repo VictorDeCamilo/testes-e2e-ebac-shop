@@ -7,13 +7,19 @@ pipeline{
   
   stages{
     stage('Clonar repositório'){
-        git branch: 'main', url: 'https://github.com/VictorDeCamilo/testes-e2e-ebac-shop.git'
+      steps{
+            git branch: 'main', url: 'https://github.com/VictorDeCamilo/testes-e2e-ebac-shop.git'
+      } 
     }
     stage('Instalar dependências'){
-        bat 'npm install'
+      steps{
+            bat 'npm install'
+      }
     }
     stage('Executar os testes'){
-        bat 'npx cypress run'
+      steps{
+            bat 'npx cypress run'
+      }  
     }
   }
 }
