@@ -18,7 +18,7 @@ pipeline{
     }
     stage('Executar os testes'){
       steps{
-            powershell 'npx cypress run'
+            powershell 'npm run test'
       }  
     }
   }
