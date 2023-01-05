@@ -18,7 +18,7 @@ pipeline{
     }
     stage('Executar os testes'){
       steps{
-            powershell 'npm run test'
+            powershell 'npm run cy:run'
       }  
     }
   }
