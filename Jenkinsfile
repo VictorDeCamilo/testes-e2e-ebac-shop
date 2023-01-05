@@ -19,7 +19,7 @@ pipeline{
     }
     stage('Executar os testes'){
       steps{
-            powershell 'npm run cy:run'
+            powershell 'NO_COLOR=1 npm run cy:run'
       }  
     }
   }
