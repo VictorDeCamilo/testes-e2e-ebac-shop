@@ -14,6 +14,7 @@ pipeline{
     stage('Instalar dependências'){
       steps{
             powershell 'npm install'
+            powershell 'npx cypress verify'
       }
     }
     stage('Executar os testes'){
