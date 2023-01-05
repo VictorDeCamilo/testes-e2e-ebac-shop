@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
-const faker = require ('faker')
+import Chance from 'chance'
+const chance = new Chance
 
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     /*  Como cliente 
@@ -11,9 +12,9 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         Preenchendo todas opções no checkout
         E validando minha compra ao final */
 
-    const nome = faker.name.firstName()
-    const sobrenome = faker.name.lastName()
-    const email = faker.internet.email(nome)
+    const nome = chance.name()
+    const sobrenome = chance.name_suffix()
+    const email = chance.email()
 
     beforeEach(() => {
         cy.visit('minha-conta')
